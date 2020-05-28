@@ -2,8 +2,14 @@
 
 """
     EXPORT DATA FROM XLS TO VAULT
-    before use please export the VAULT_TOKEN and VAULT_ADDR
 
+    Parses the xlsx file, sorts it as a python dictonary.
+
+    Then gets the current secrets from Vault and updates them with the data found in the xlsx file.
+
+    Pushes the changes to Vault
+
+    !!! Before use please export the VAULT_TOKEN and VAULT_ADDR !!!
 """
 
 from os import environ
@@ -64,7 +70,6 @@ def generate_data(xls) -> dict:
 def get_current_secrets(project: str, hostname: str) -> dict:
     """
     Queries Vault to get the current state of secrets in the requested path
-
 
     :return: a "user = passwd" dict for requested path
     """
