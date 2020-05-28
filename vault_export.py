@@ -108,8 +108,9 @@ def main():
     # update secrets one hostname at a time
     for project in xls_data:
         for hostname in xls_data[project]:
+
             # get the current state of secrets
-            current_secrets = get_current_secrets(project, hostname)
+            current_secrets = get_current_secrets(project.upper(), hostname.lower())
 
             # get secrets from xls file
             secrets_update = xls_data[project][hostname]
@@ -117,7 +118,7 @@ def main():
             # merge the dicts
             current_secrets.update(secrets_update)
 
-            update_data(project, hostname, current_secrets)
+            update_data(project.upper(), hostname.lower(), current_secrets)
 
 
 if __name__ == '__main__':
