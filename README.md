@@ -17,7 +17,7 @@ pip install -r requirements.txt
 ``` shell script
 # export required environment variables
 export VAULT_ADDR='https//.....'
-expor VAULT_TOKEN=XXXXXXXXXXXXXXXXXX
+export VAULT_TOKEN=XXXXXXXXXXXXXXXXXX
 
 ./vault_export.py
 ```
